@@ -1,12 +1,20 @@
-<h1>Prospect Log In Page</h1>
+<h1>Log In Page</h1>
 
-<form action="/movies/<%- theMovie.id %>?_method=put" method="post">
-  <label for="username">User name</label>
-  <input type="text" id="username" name="username" value="<%- theUser.name%>">
+<form action="/register" method="POST">
+  <div class="form-group">
+    <label for="authEmail">Email</label>
+    <input id="authEmail" class="form-control" type="email" name="email">
+  </div>
 
-  <label for="password">User password</label>
-  <input type="text" id="password" name="password" value="<%- theUser.password%>">
+  <div class="form-group">
+    <label for="authName">Name</label>
+    <input id="authName" class="form-control" type="text" name="name">
+  </div>
 
+  <div class="form-group">
+    <label for="authPassword">Password</label>
+    <input id="authPassword" class="form-control" type="password" name="password">
+  </div>
 
-  <button type="submit">Update</button>
+  <input class="btn btn-primary" type="submit">
 </form>

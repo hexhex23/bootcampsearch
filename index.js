@@ -3,7 +3,7 @@ var app = express()
 var port = process.env.PORT || 5000
 
 var mongoose = require('mongoose')
-var dbURI = process.env.PROD_MONGODB || 'mongodb://localhost:27017/bootcamp'
+var dbURI = process.env.PROD_MONGODB || 'mongodb://localhost:27017/Bootcamp'
 mongoose.connect(dbURI)
 
 //check if our connection is ok
@@ -20,16 +20,17 @@ app.use(bodyParser.json())
 
 app.set('view engine', 'ejs')
 
-var expressLayouts = require('express-ejs-layouts')
-app.use(expressLayouts)
+// var ejsLayouts = require('express-ejs-layouts')
+// app.use(ejsLayouts)
 
 var methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
-app.use(express.static('public'))
 
-var usersController = require('./controllers/users_controller')
-app.use(usersController)
+// app.use(express.static('public'))
+//
+// var usersController = require('./controllers/users_controller')
+// app.use(usersController)
 
 app.get('/', function (req, res) {
   res.render('./search/contact')
